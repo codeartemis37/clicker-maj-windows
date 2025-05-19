@@ -41,6 +41,9 @@
             <div id="progressFill"></div>
         </div>
         <div id="percentage">0%</div>
+        <div id="Bonus1">d</div>
+        <div id="Bonus2">d</div>
+        <div id="Bonus3">d</div>
     </div>
 
     <div id="bsod">
@@ -58,6 +61,7 @@
         let dumping = false;
 
         document.body.onclick = () => {
+            GenerateBonus();
             if(progress < 100 && !dumping) {
                 progress++;
                 document.getElementById('progressFill').style.width = progress + '%';
@@ -72,7 +76,9 @@
                 }
             }
         };
-
+        function GenerateBonus() {
+            document.getElementById('Bonus1').textContent = "bonus";
+        }
         function simulateDump() {
             let dumpPercent = 0;
             const dumpInterval = setInterval(() => {
@@ -85,6 +91,8 @@
                 }
             }, 50);
         }
+        
+
     </script>
 </body>
 </html>
